@@ -39,4 +39,21 @@ public class MoneyTransferTest {
         assertEquals(expectedBalanceCard1, actualBalanceCard1);
         assertEquals(expectedBalanceCard2, actualBalanceCard2);
     }
+
+    @Test
+    void insufficientFundsToTransfer() {
+        var cardInfo1 = getCard1();
+        var cardInfo2 = getCard2();
+        var balanceCard1 = dashboardPage.getCardBalance(cardInfo1);
+        var balanceCard2 = dashboardPage.getCardBalance(cardInfo2);
+        var amount = getInvalidAmount(balanceCard2);
+        var transferPage = dashboardPage.cardTransfer(cardInfo1);
+        transferPage.getTransfer(String.valueOf(amount), cardInfo2);
+        transferPage.findErrorMessage("Недостаточно средств для перевода");
+        var actualBalanceCard1 = dashboardPage.getCardBalance(cardInfo1);
+        var actualBalanceCard2 = dashboardPage.getCardBalance(cardInfo2);
+
+        assertEquals(balanceCard1, actualBalanceCard1);
+        assertEquals(balanceCard2, actualBalanceCard2);
+    }
 }
