@@ -1,1 +1,1 @@
-# Behaviour Driven Development [![Build status](https://ci.appveyor.com/api/projects/status/kuhblukiffkcihl5?svg=true)](https://ci.appveyor.com/project/IlyaaIvanovv/2-4-bdd)
+# BDD [![Build status](https://ci.appveyor.com/api/projects/status/kuhblukiffkcihl5?svg=true)](https://ci.appveyor.com/project/IlyaaIvanovv/2-4-bdd)
